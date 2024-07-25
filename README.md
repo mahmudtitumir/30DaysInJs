@@ -5,3 +5,4 @@
 -   Day 3: Conditionals.
 -   Day 4: Loops.
 -   Day 5: Functions.
+-   Day 6: Arrays.
