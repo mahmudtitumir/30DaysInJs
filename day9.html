@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Day - 9</title>
+        <style>
+            body {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #333;
+            }
+            button {
+                font-size: 16px;
+                color: #fff;
+                padding: 8px 12px;
+                background-color: #666;
+                border-radius: 10px;
+                border: 2px solid #8000ff;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="hello">Hello World!!</h1>
+        <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus cum
+            sunt laudantium a, praesentium autem modi obcaecati quas perferendis
+            aperiam aspernatur sequi nulla distinctio similique totam optio
+            porro sapiente illum laborum sit in sed. Quae ea quidem numquam, hic
+            ratione dolor ex non dignissimos itaque doloribus nisi quas culpa
+            sint?
+        </p>
+        <div>#30daysjschallenge</div>
+        <img src="#" class="img" alt="Change Altributes" width="200px" />
+        <ul></ul>
+        <p class="delete">Delete me</p>
+        <button>Click to change</button>
+    </body>
+    <script>
+        // Activity 1: Selecting and Manipulating Elements
+        document.querySelector('#hello').textContent = 'Hello Everyone!!';
+        // Task 2
+        document.querySelector('.text').style.backgroundColor = '#ff5656';
+        // Activity 2: Creating and Appending Elements
+        const createDiv = document.createElement('div');
+        createDiv.textContent = 'This div is create by javascript DOM.';
+        document.body.appendChild(createDiv);
+        // Task 4
+        const ul = document.querySelector('ul');
+        const li = document.createElement('li');
+        li.textContent = 'apple';
+        ul.appendChild(li);
+        const newLi = document.createElement('li');
+        newLi.textContent = 'banana';
+        ul.appendChild(newLi);
+        // Activity 3: Removing Elements
+        const element = document.querySelector('.delete');
+        element.parentNode.removeChild(element);
+        // Task 6
+        const parentElement = document.querySelector('ul');
+        const lastChild = parentElement.lastElementChild;
+        parentElement.removeChild(lastChild);
+        // Activity 4: Modifying Attributes and classes
+        document
+            .querySelector('img')
+            .setAttribute(
+                'src',
+                'https://images.unsplash.com/photo-1713520074829-2e862fa8f8ac'
+            );
+        // Task 8
+        document.querySelector('img').classList.add('image');
+        document.querySelector('img').classList.remove('image');
+        // Activity 5: Event Handling
+        document.querySelector('button').addEventListener('click', () => {
+            document.querySelector('.text').textContent =
+                'praesentium autem modi obcaecati quas perferendis aperiam aspernatur sequi';
+        });
+        // Task 10
+        document.querySelector('button').addEventListener('mouseover', () => {
+            document.querySelector('button').style.borderColor = '#663399';
+        });
+    </script>
+</html>
