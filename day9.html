@@ -40,13 +40,17 @@
     </body>
     <script>
         // Activity 1: Selecting and Manipulating Elements
+
         document.querySelector('#hello').textContent = 'Hello Everyone!!';
+
         // Task 2
         document.querySelector('.text').style.backgroundColor = '#ff5656';
+
         // Activity 2: Creating and Appending Elements
         const createDiv = document.createElement('div');
         createDiv.textContent = 'This div is create by javascript DOM.';
         document.body.appendChild(createDiv);
+
         // Task 4
         const ul = document.querySelector('ul');
         const li = document.createElement('li');
@@ -55,13 +59,16 @@
         const newLi = document.createElement('li');
         newLi.textContent = 'banana';
         ul.appendChild(newLi);
+
         // Activity 3: Removing Elements
         const element = document.querySelector('.delete');
         element.parentNode.removeChild(element);
+
         // Task 6
         const parentElement = document.querySelector('ul');
         const lastChild = parentElement.lastElementChild;
         parentElement.removeChild(lastChild);
+
         // Activity 4: Modifying Attributes and classes
         document
             .querySelector('img')
@@ -69,14 +76,17 @@
                 'src',
                 'https://images.unsplash.com/photo-1713520074829-2e862fa8f8ac'
             );
+
         // Task 8
         document.querySelector('img').classList.add('image');
         document.querySelector('img').classList.remove('image');
+
         // Activity 5: Event Handling
         document.querySelector('button').addEventListener('click', () => {
             document.querySelector('.text').textContent =
                 'praesentium autem modi obcaecati quas perferendis aperiam aspernatur sequi';
         });
+
         // Task 10
         document.querySelector('button').addEventListener('mouseover', () => {
             document.querySelector('button').style.borderColor = '#663399';
