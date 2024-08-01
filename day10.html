@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Day - 10</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-family: 'sans-serif';
+            }
+
+            button {
+                border: none;
+                color: #fff;
+                cursor: pointer;
+                font-size: 16px;
+                border-radius: 5px;
+                padding: 10px 16px;
+                background-color: #888;
+            }
+
+            input,
+            select {
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            option {
+                font-family: inherit;
+            }
+
+            .activity3 {
+                display: flex;
+                flex-direction: column;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="activity1">
+            <p>This day is Beautiful !!!</p>
+            <button>CHANGE</button>
+            <br />
+            <img
+                src="https://images.unsplash.com/photo-1693837188334-07f269354c27"
+                alt="unsplash image"
+                width="260px"
+            />
+        </div>
+        <div
+            id="element"
+            style="width: 260px; height: 200px; background-color: #ccc"
+        ></div>
+        <div class="activity2">
+            <input type="text" id="input" />
+            <p id="display"></p>
+        </div>
+        <div class="activity3">
+            <form id="form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" /><br />
+                <label for="where">Where You Hear:</label>
+                <select name="where" id="where" required>
+                    <option selected>Select Your Option</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="offline">Offline</option>
+                    <option value="Other">Other</option></select
+                ><br />
+                <button type="submit" value="submit">SEND</button>
+            </form>
+        </div>
+        <ul>
+            <li>Apple</li>
+            <li>Orage</li>
+        </ul>
+        <script>
+            // Activity 1
+            document.querySelector('button').addEventListener(
+                'click',
+                function () {
+                    document.querySelector('p').textContent =
+                        'Welcome to this page.';
+                },
+                false
+            );
+            document.querySelector('img').addEventListener(
+                'dblclick',
+                function () {
+                    let img = document.querySelector('img');
+                    if (img.style.visibility === 'hidden')
+                        img.style.visibility = 'visible';
+                    else img.style.visibility = 'hidden';
+                },
+                false
+            );
+            // Activity 2
+            document.querySelector('#element').addEventListener(
+                'mouseover',
+                () => {
+                    document.querySelector('#element').style.backgroundColor =
+                        '#740000';
+                },
+                false
+            );
+            document.querySelector('#element').addEventListener(
+                'mouseout',
+                () => {
+                    document.querySelector('#element').style.backgroundColor =
+                        '#ccc';
+                },
+                false
+            );
+            // Activity 3
+            document.querySelector('#input').addEventListener(
+                'keydown',
+                function (e) {
+                    console.log(e.target.value);
+                },
+                false
+            );
+            document.querySelector('#input').addEventListener(
+                'keyup',
+                e => {
+                    document.querySelector('#display').textContent =
+                        e.target.value;
+                },
+                false
+            );
+            // Activity 4
+            document.addEventListener('DOMContentLoaded', function () {
+                document
+                    .querySelector('#form')
+                    .addEventListener('submit', e => {
+                        e.preventDefault();
+                        const formObj = {};
+                        const formData = new FormData(
+                            document.querySelector('#form')
+                        );
+                        formData.forEach((value, key) => {
+                            formObj[key] = value;
+                        });
+                        Object.entries(formObj).forEach(([k, v]) =>
+                            console.log(`${k}: ${v}`)
+                        );
+                    });
+            });
+            document
+                .querySelector('#where')
+                .addEventListener('change', function () {
+                    const selectedValue =
+                        document.querySelector('#where').value;
+                    document.querySelector('#display').textContent =
+                        selectedValue;
+                });
+            // Activity 5
+            document
+                .querySelector('body')
+                .addEventListener('click', function (event) {
+                    if (event.target.id === 'element')
+                        console.log('Clicked:', event.target.textContent);
+                });
+            document
+                .querySelector('body')
+                .addEventListener('click', function (event) {
+                    if (event.target.value === 'ul') {
+                        const newLi = document.createElement('li');
+                        newLi.textContent = 'New Item';
+                        document.querySelector('ul').appendChild(newLi);
+                    }
+                });
+        </script>
+    </body>
+</html>
